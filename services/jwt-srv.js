@@ -28,9 +28,3 @@ class JwtSrv {
 module.exports = {
     JwtSrv,
 };
-
-// const foo = {name: 'Narek'};
-// const a = JwtSrv.sign(foo);
-// console.log('a  :', a);
-// const b = JwtSrv.verify(a);
-// console.log('b   :', b);

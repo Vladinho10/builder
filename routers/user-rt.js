@@ -1,9 +1,6 @@
 'use strict';
 const userRt = require('express').Router();
-const userMiddleware = require('../middlewares/auth');
-const hasAccess = require('../middlewares/hasAccess');
 const { UserCtrl } = require('../controllers');
-const { User } = require('../dal/models');
 
 userRt.get('/v1/users/ejs', UserCtrl.showEjs);
 userRt.get('/v1/users/:_id', UserCtrl.getOne);
