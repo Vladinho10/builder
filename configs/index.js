@@ -7,7 +7,7 @@ const dbOptions = {
     logging: console.log,
     operatorsAliases: 0,
     freezeTableName: true,
-    dialect: 'mysql',
+    dialect: 'postgres',
     host: process.env.DB_HOST,
     database: process.env.DB_NAME,
     username: process.env.DB_USER,

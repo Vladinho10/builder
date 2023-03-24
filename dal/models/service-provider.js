@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = (sequelize, DataTypes) => sequelize.define(
-    'User',
+    'ServiceProvider',
     {
         id: {
             allowNull: false,
@@ -9,11 +9,14 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
         },
-        age: {
-            type: DataTypes.INTEGER,
-        },
         name: {
             type: DataTypes.STRING,
+        },
+        latitude: {
+            type: DataTypes.DECIMAL,
+        },
+        longitude: {
+            type: DataTypes.DECIMAL,
         },
         createdAt: {
             type: DataTypes.BIGINT,
@@ -23,7 +26,7 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
         },
     },
     {
-        tableName: 'users',
+        tableName: 'serviceProviders',
         timestamps: false,
     },
 );
