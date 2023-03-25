@@ -18,7 +18,7 @@ module.exports = {
         },
         servers: [
             {
-                url: 'http://localhost:4000/v1',
+                url: 'http://localhost:5000/v1',
                 description: 'local',
             },
         ],

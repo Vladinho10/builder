@@ -13,11 +13,8 @@ class UserSrv {
 
     static async readOne(query) {
         const user = await User.findOne({ where: { id: query._id } });
-        console.log({ user });
-
         const json = user.toJSON();
 
-        console.log({ json });
         return json;
     }
 

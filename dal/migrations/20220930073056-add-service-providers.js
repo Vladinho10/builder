@@ -18,12 +18,6 @@ module.exports = {
             longitude: {
                 type: DataTypes.DECIMAL,
             },
-            createdAt: {
-                type: DataTypes.BIGINT,
-            },
-            updatedAt: {
-                type: DataTypes.BIGINT,
-            },
         });
     },
 

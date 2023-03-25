@@ -18,12 +18,6 @@ module.exports = (sequelize, DataTypes) => sequelize.define(
         longitude: {
             type: DataTypes.DECIMAL,
         },
-        createdAt: {
-            type: DataTypes.BIGINT,
-        },
-        updatedAt: {
-            type: DataTypes.BIGINT,
-        },
     },
     {
         tableName: 'serviceProviders',

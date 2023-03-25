@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "2ff8d99a-cf6d-473b-a125-4dd02874150d",
+		"name": "builder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4730590"
+	},
+	"item": [
+		{
+			"name": "service-providers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/v1/service-providers?latitude=40.1841&longitude=44.5209&sort=asc&limit=3&offset=1",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"v1",
+						"service-providers"
+					],
+					"query": [
+						{
+							"key": "latitude",
+							"value": "40.1841"
+						},
+						{
+							"key": "longitude",
+							"value": "44.5209"
+						},
+						{
+							"key": "sort",
+							"value": "asc"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

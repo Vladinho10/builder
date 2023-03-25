@@ -1,5 +1,5 @@
 {
-  "/users": {
+  "v1/users": {
     "get": {
       "summary": "Get many users",
       "tags": ["Users"],
@@ -116,7 +116,7 @@
       }
     }
   },
-  "/users/{_id}": {
+  "v1/users/{_id}": {
     "get": {
       "summary": "Get a user by id",
       "tags": ["Users"],

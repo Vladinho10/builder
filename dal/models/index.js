@@ -14,15 +14,15 @@ fs.readdirSync(__dirname)
         db[model.name] = model;
     });
 
-Object.keys(db).forEach(modelName => {
-    if (db[modelName].associate) {
-        db[modelName].associate(db);
+for (const dbKey in db) {
+    if (db[dbKey].associate) {
+        db[dbKey].associate(db);
     }
 
-    if (db[modelName].addScopes) {
-        db[modelName].addScopes(db);
+    if (db[dbKey].addScopes) {
+        db[dbKey].addScopes(db);
     }
-});
+}
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

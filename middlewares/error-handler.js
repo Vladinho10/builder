@@ -4,11 +4,12 @@ const { general: { oftenUseCodes } } = require('../constants');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (err, req, res, next) {
     logger.error({ errMessage: err.message });
-    if (err) {
-        const errorResponse = [];
-        const errors  = typeof err === 'string' ? err : err.errors;
+    const body =  err.response && err.response.body;
+    logger.error('err.response.body', body);
 
-        logger.error(err.message);
+    if (err) {
+        let errorResponse = [];
+        const errors  = typeof err === 'string' ? err : err.errors;
 
         if (err.name === 'CustomError') {
             errorResponse.push({
@@ -21,7 +22,7 @@ module.exports = function (err, req, res, next) {
             if (err.name === 'ValidationError') {
                 for (const item in errors) {
                     const error = errors[item];
-                    let message;
+                    let message = '';
 
                     if (error.kind === 'user defined') {
                         ({ message } = error);
@@ -48,11 +49,34 @@ module.exports = function (err, req, res, next) {
                 }
             }
 
+            if (err.name === 'CastError') {
+                errorResponse.push({
+                    field: err.path,
+                    message: err.message,
+                });
+            }
+
             if (err.name === 'MulterError') {
                 errorResponse.push({
                     field: err.field,
                     message: err.message,
                 });
+            }
+
+            if (err.name === 'Error') {
+                if (body && body.errors) {
+                    errorResponse = [...errorResponse, ...body.errors];
+                } else if (body && body.detail) {
+                    const [mess] = body.detail.split('. Use ');
+                    errorResponse.push({
+                        message: mess,
+                    });
+                } else {
+                    errorResponse.push({
+                        field: err.field,
+                        message: err.message,
+                    });
+                }
             }
         }
 

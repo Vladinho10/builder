@@ -21,7 +21,25 @@
           "description": "this is offset",
           "required": false,
           "schema": {
-            "type": "string"
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "latitude",
+          "description": "this is latitude",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "in": "query",
+          "name": "longitude",
+          "description": "this is longitude",
+          "required": false,
+          "schema": {
+            "type": "integer"
           }
         },
         {
@@ -44,171 +62,6 @@
               }
             }
           }
-        }
-      }
-    },
-    "post": {
-      "summary": "Create a new resource",
-      "tags": [
-        "ServiceProvider"
-      ],
-      "requestBody": {
-        "required": true,
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#components/schemas/serviceProviderSchema"
-            }
-          }
-        }
-      },
-      "responses": {
-        "201": {
-          "description": "Created",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#components/schemas/serviceProviderSchema"
-              }
-            }
-          }
-        }
-      }
-    },
-    "put": {
-      "summary": "Update many resources",
-      "tags": [
-        "ServiceProvider"
-      ],
-      "requestBody": {
-        "required": true,
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#components/schemas/serviceProviderSchema"
-            }
-          }
-        }
-      },
-      "parameters": [
-        {
-          "in": "body",
-          "name": "ids",
-          "description": "array of ids",
-          "required": false,
-          "schema": {
-            "type": "string"
-          }
-        }
-      ],
-      "responses": {
-        "202": {
-          "description": "Accepted",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#components/schemas/serviceProviderSchema"
-              }
-            }
-          }
-        }
-      }
-    },
-    "patch": {
-      "summary": "Delete many resource",
-      "tags": [
-        "ServiceProvider"
-      ],
-      "parameters": [
-        {
-          "in": "query",
-          "name": "limit",
-          "description": "this is limit",
-          "required": false,
-          "schema": {
-            "type": "integer"
-          }
-        }
-      ],
-      "responses": {
-        "204": {
-          "description": "No content"
-        }
-      }
-    }
-  },
-  "v1/service-providers/{_id}": {
-    "get": {
-      "summary": "Get a resource by id",
-      "tags": [
-        "ServiceProvider"
-      ],
-      "parameters": [
-        {
-          "name": "_id",
-          "in": "path",
-          "description": "resource's id",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "responses": {
-        "200": {
-          "description": "Ok",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#components/schemas/serviceProviderSchema"
-              }
-            }
-          }
-        }
-      }
-    },
-    "put": {
-      "summary": "update a resource by id",
-      "tags": [
-        "ServiceProvider"
-      ],
-      "parameters": [
-        {
-          "name": "_id",
-          "in": "path",
-          "description": "resource's id",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "responses": {
-        "202": {
-          "description": "Accepted",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#components/schemas/serviceProviderSchema"
-              }
-            }
-          }
-        }
-      }
-    },
-    "delete": {
-      "summary": "delete a resource by id",
-      "tags": [
-        "ServiceProvider"
-      ],
-      "parameters": [
-        {
-          "name": "_id",
-          "in": "path",
-          "description": "resource's id",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "responses": {
-        "204": {
-          "description": "No content"
         }
       }
     }

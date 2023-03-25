@@ -1,5 +1,47 @@
 {
-  "Schema": {
-    "properties": {}
+  "serviceProviderSchema": {
+    "properties": {
+      "data": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "distance": {
+              "type": "number"
+            },
+            "location": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "latitude": {
+                  "type": "number"
+                },
+                "longitude": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "example": {
+      "data": [
+        {
+          "distance": 0,
+          "location": {
+            "id": "834e7466-bdf2-4a98-b439-f98377201545",
+            "name": "Innovative Builders",
+            "latitude": "40.1841",
+            "longitude": "44.5209"
+          }
+        }
+      ]
+    }
   }
 }
