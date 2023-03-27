@@ -49,7 +49,7 @@ describe('Posts API', () => {
                     {
                         distance: 6663501.455361153,
                         location: {
-                            id: 'c5351b06-e7aa-4fa2-b3f5-30ef432812b0',
+                            id: 14,
                             latitude: '40.1865',
                             longitude: '44.5133',
                             name: 'New Era Construction',
@@ -58,7 +58,7 @@ describe('Posts API', () => {
                     {
                         distance: 6663519.985031413,
                         location: {
-                            id: '01b8f6c0-6a6b-4dae-8e07-0ed297adaf9c',
+                            id: 5,
                             latitude: '40.188',
                             longitude: '44.5185',
                             name: 'Pro Builders Inc.',
